@@ -4,7 +4,8 @@
       "Skill(presentation)",
       "Skill(presentation:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
     ]
   }
 }
