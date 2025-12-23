@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お悔やみ情報 CATV配信システム ご提案 - c-table</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @page {
+            size: A4 landscape;
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .slide {
+                page-break-after: always;
+                page-break-inside: avoid;
+                display: flex !important;
+                width: 297mm;
+                height: 210mm;
+            }
+            .no-print {
+                display: none !important;
+            }
+        }
+
+        @media screen {
+            body {
+                background: #1e293b;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                padding: 20px;
+            }
+
+            .slide-container {
+                width: 297mm;
+                height: 210mm;
+                position: relative;
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            }
+
+            .slide {
+                display: none !important;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            .slide.active {
+                display: flex !important;
+            }
+        }
+
+        .slide {
+            width: 297mm;
+            height: 210mm;
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide-number {
+            position: absolute;
+            bottom: 20px;
+            right: 30px;
+            font-size: 14px;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <!-- スライド1: 表紙 -->
+        <div class="slide active flex items-center justify-center" data-slide="1">
+            <div class="text-center">
+                <h1 class="text-6xl font-bold text-gray-800 mb-8">お悔やみ情報<br>CATV配信システム<br>のご提案</h1>
+                <p class="text-2xl text-gray-600 mb-12">メールからパワーポイントへ<br>自動変換・配信システム</p>
+                <div class="flex justify-center mb-12">
+                    <img src="img/image.png" alt="c-table" class="h-20">
+                </div>
+                <p class="text-2xl text-gray-500">株式会社C-table</p>
+            </div>
+            <div class="slide-number">1</div>
+        </div>
+
+        <!-- スライド2: アジェンダ -->
+        <div class="slide flex flex-col p-16" data-slide="2">
+            <h2 class="text-5xl font-bold text-gray-800 mb-10">本日のアジェンダ</h2>
+
+            <div class="space-y-4">
+                <div class="flex items-center bg-blue-50 p-5 rounded-lg">
+                    <span class="text-3xl font-bold text-blue-600 mr-6">1</span>
+                    <span class="text-2xl text-gray-700">現状の課題</span>
+                </div>
+                <div class="flex items-center bg-blue-50 p-5 rounded-lg">
+                    <span class="text-3xl font-bold text-blue-600 mr-6">2</span>
+                    <span class="text-2xl text-gray-700">システム概要</span>
+                </div>
+                <div class="flex items-center bg-blue-50 p-5 rounded-lg">
+                    <span class="text-3xl font-bold text-blue-600 mr-6">3</span>
+                    <span class="text-2xl text-gray-700">運用フロー</span>
+                </div>
+                <div class="flex items-center bg-blue-50 p-5 rounded-lg">
+                    <span class="text-3xl font-bold text-blue-600 mr-6">4</span>
+                    <span class="text-2xl text-gray-700">機能詳細</span>
+                </div>
+                <div class="flex items-center bg-blue-50 p-5 rounded-lg">
+                    <span class="text-3xl font-bold text-blue-600 mr-6">5</span>
+                    <span class="text-2xl text-gray-700">お見積もり</span>
+                </div>
+            </div>
+
+            <div class="slide-number">2</div>
+        </div>
+
+        <!-- スライド3: 現状の課題 -->
+        <div class="slide flex flex-col p-16" data-slide="3">
+            <h2 class="text-5xl font-bold text-gray-800 mb-8">現状の課題</h2>
+
+            <div class="grid grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-3xl font-semibold text-blue-600 mb-6">現在の運用</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start bg-gray-50 p-4 rounded-lg">
+                            <span class="text-xl mr-3">•</span>
+                            <span class="text-xl text-gray-700">市がお悔やみ情報を作成</span>
+                        </div>
+                        <div class="flex items-start bg-gray-50 p-4 rounded-lg">
+                            <span class="text-xl mr-3">•</span>
+                            <span class="text-xl text-gray-700">サンニチ新聞にメール送付</span>
+                        </div>
+                        <div class="flex items-start bg-gray-50 p-4 rounded-lg">
+                            <span class="text-xl mr-3">•</span>
+                            <span class="text-xl text-gray-700">新聞のお悔やみ欄に掲載</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-3xl font-semibold text-green-600 mb-6">ご要望</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start bg-green-50 p-4 rounded-lg">
+                            <span class="text-xl mr-3">•</span>
+                            <span class="text-xl text-gray-700">同じ情報を<strong class="text-red-600">CATV</strong>でも配信</span>
+                        </div>
+                        <div class="flex items-start bg-green-50 p-4 rounded-lg">
+                            <span class="text-xl mr-3">•</span>
+                            <span class="text-xl text-gray-700">パワーポイント形式で</span>
+                        </div>
+                        <div class="flex items-start bg-green-50 p-4 rounded-lg">
+                            <span class="text-xl mr-3">•</span>
+                            <span class="text-xl text-gray-700"><strong class="text-red-600">自動化</strong>で運用負荷軽減</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-2xl font-bold text-red-600 mt-8 text-center">→ 既存業務を変えずにCATVへの配信を自動化したい</p>
+
+            <div class="slide-number">3</div>
+        </div>
+
+        <!-- スライド4: ご提案システム概要 -->
+        <div class="slide flex flex-col p-16" data-slide="4">
+            <h2 class="text-5xl font-bold text-gray-800 mb-8">ご提案システム概要</h2>
+
+            <div class="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-8 rounded-lg text-center mb-8">
+                <p class="text-2xl mb-2">お悔やみ情報を</p>
+                <p class="text-4xl font-bold mb-2">メール → パワーポイント</p>
+                <p class="text-2xl">に自動変換して配信</p>
+            </div>
+
+            <div class="space-y-4">
+                <div class="flex items-center bg-blue-50 p-5 rounded-lg">
+                    <span class="text-2xl mr-4">✓</span>
+                    <span class="text-xl text-gray-700"><strong>市の既存業務フローを変更せず</strong>に導入可能</span>
+                </div>
+                <div class="flex items-center bg-green-50 p-5 rounded-lg">
+                    <span class="text-2xl mr-4">✓</span>
+                    <span class="text-xl text-gray-700">担当者による<strong>確認・承認フロー</strong>付き</span>
+                </div>
+                <div class="flex items-center bg-purple-50 p-5 rounded-lg">
+                    <span class="text-2xl mr-4">✓</span>
+                    <span class="text-xl text-gray-700"><strong>CATVへの送信も自動化</strong></span>
+                </div>
+            </div>
+
+            <div class="slide-number">4</div>
+        </div>
+
+        <!-- スライド5: 運用フロー -->
+        <div class="slide flex flex-col p-12" data-slide="5">
+            <h2 class="text-5xl font-bold text-gray-800 mb-6">運用フロー</h2>
+
+            <div class="flex-1 flex items-center justify-center">
+                <img src="img/figure.png" alt="全体フロー図" style="max-height: 420px; margin: 0 auto; display: block;">
+            </div>
+
+            <div class="slide-number">5</div>
+        </div>
+
+        <!-- スライド6: 掲載項目 -->
+        <div class="slide flex flex-col p-16" data-slide="6">
+            <h2 class="text-5xl font-bold text-gray-800 mb-8">掲載項目</h2>
+
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <table class="w-full text-left">
+                    <thead class="bg-blue-600 text-white">
+                        <tr>
+                            <th class="p-4 text-lg font-bold">故人名</th>
+                            <th class="p-4 text-lg font-bold">年齢</th>
+                            <th class="p-4 text-lg font-bold">喪主名</th>
+                            <th class="p-4 text-lg font-bold">続柄</th>
+                            <th class="p-4 text-lg font-bold">通夜</th>
+                            <th class="p-4 text-lg font-bold">告別式</th>
+                            <th class="p-4 text-lg font-bold">会場</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-lg">
+                        <tr class="border-b bg-gray-50">
+                            <td class="p-4">山田 太郎</td>
+                            <td class="p-4">85歳</td>
+                            <td class="p-4">山田 花子</td>
+                            <td class="p-4">妻</td>
+                            <td class="p-4">1/15 18:00</td>
+                            <td class="p-4">1/16 10:00</td>
+                            <td class="p-4">○○斎場</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="p-4">鈴木 一郎</td>
+                            <td class="p-4">78歳</td>
+                            <td class="p-4">鈴木 次郎</td>
+                            <td class="p-4">長男</td>
+                            <td class="p-4">1/15 19:00</td>
+                            <td class="p-4">1/16 11:00</td>
+                            <td class="p-4">△△会館</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="text-xl text-gray-600 mt-6 text-center">※ 1スライドに複数名を表形式で表示</p>
+
+            <div class="slide-number">6</div>
+        </div>
+
+        <!-- スライド7: システム機能 -->
+        <div class="slide flex flex-col p-16" data-slide="7">
+            <h2 class="text-5xl font-bold text-gray-800 mb-8">システム機能</h2>
+
+            <div class="grid grid-cols-2 gap-4">
+                <div class="bg-blue-50 p-5 rounded-lg border-l-4 border-blue-500">
+                    <h4 class="text-xl font-bold text-gray-800 mb-2">メール受信</h4>
+                    <p class="text-lg text-gray-700">指定アドレスへのメールを自動受信</p>
+                </div>
+                <div class="bg-green-50 p-5 rounded-lg border-l-4 border-green-500">
+                    <h4 class="text-xl font-bold text-gray-800 mb-2">PDF解析</h4>
+                    <p class="text-lg text-gray-700">添付PDFからお悔やみ情報を抽出</p>
+                </div>
+                <div class="bg-purple-50 p-5 rounded-lg border-l-4 border-purple-500">
+                    <h4 class="text-xl font-bold text-gray-800 mb-2">パワポ生成</h4>
+                    <p class="text-lg text-gray-700">テンプレートに基づき自動作成</p>
+                </div>
+                <div class="bg-orange-50 p-5 rounded-lg border-l-4 border-orange-500">
+                    <h4 class="text-xl font-bold text-gray-800 mb-2">管理画面</h4>
+                    <p class="text-lg text-gray-700">プレビュー・承認・修正アップロード</p>
+                </div>
+                <div class="bg-red-50 p-5 rounded-lg border-l-4 border-red-500">
+                    <h4 class="text-xl font-bold text-gray-800 mb-2">CATV送信</h4>
+                    <p class="text-lg text-gray-700">承認後に自動メール送信</p>
+                </div>
+                <div class="bg-teal-50 p-5 rounded-lg border-l-4 border-teal-500">
+                    <h4 class="text-xl font-bold text-gray-800 mb-2">履歴管理</h4>
+                    <p class="text-lg text-gray-700">受信・送信履歴の一覧表示</p>
+                </div>
+            </div>
+
+            <div class="slide-number">7</div>
+        </div>
+
+        <!-- スライド8: 初期構築費 -->
+        <div class="slide flex flex-col p-16" data-slide="8">
+            <h2 class="text-5xl font-bold text-gray-800 mb-8">初期構築費</h2>
+
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden mb-6">
+                <table class="w-full text-left">
+                    <thead class="bg-blue-600 text-white">
+                        <tr>
+                            <th class="p-4 text-lg font-bold">項目</th>
+                            <th class="p-4 text-lg font-bold text-center">工数</th>
+                            <th class="p-4 text-lg font-bold text-right">金額</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-lg">
+                        <tr class="border-b">
+                            <td class="p-3">要件定義・設計</td>
+                            <td class="p-3 text-center">4人日</td>
+                            <td class="p-3 text-right">¥200,000</td>
+                        </tr>
+                        <tr class="border-b bg-gray-50">
+                            <td class="p-3">メール受信基盤</td>
+                            <td class="p-3 text-center">4人日</td>
+                            <td class="p-3 text-right">¥200,000</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="p-3">PDF解析機能</td>
+                            <td class="p-3 text-center">6人日</td>
+                            <td class="p-3 text-right">¥300,000</td>
+                        </tr>
+                        <tr class="border-b bg-gray-50">
+                            <td class="p-3">パワポ生成機能</td>
+                            <td class="p-3 text-center">6人日</td>
+                            <td class="p-3 text-right">¥300,000</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="p-3">テンプレート作成</td>
+                            <td class="p-3 text-center">2人日</td>
+                            <td class="p-3 text-right">¥100,000</td>
+                        </tr>
+                        <tr class="border-b bg-gray-50">
+                            <td class="p-3">管理画面</td>
+                            <td class="p-3 text-center">8人日</td>
+                            <td class="p-3 text-right">¥400,000</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="p-3">CATV送信・テスト・マニュアル</td>
+                            <td class="p-3 text-center">6人日</td>
+                            <td class="p-3 text-right">¥300,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="bg-gradient-to-r from-red-600 to-red-700 text-white p-6 rounded-lg text-center">
+                <p class="text-xl mb-2">合計</p>
+                <p class="text-5xl font-bold">¥1,800,000（税抜）</p>
+            </div>
+
+            <div class="slide-number">8</div>
+        </div>
+
+        <!-- スライド9: 月額運用費 -->
+        <div class="slide flex flex-col p-16" data-slide="9">
+            <h2 class="text-5xl font-bold text-gray-800 mb-10">月額運用費</h2>
+
+            <div class="grid grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-6">サポート内容</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center bg-green-50 p-4 rounded-lg">
+                            <span class="text-xl mr-3">✓</span>
+                            <span class="text-lg text-gray-700">定期保守</span>
+                        </div>
+                        <div class="flex items-center bg-green-50 p-4 rounded-lg">
+                            <span class="text-xl mr-3">✓</span>
+                            <span class="text-lg text-gray-700">問い合わせ対応</span>
+                        </div>
+                        <div class="flex items-center bg-green-50 p-4 rounded-lg">
+                            <span class="text-xl mr-3">✓</span>
+                            <span class="text-lg text-gray-700">障害対応</span>
+                        </div>
+                        <div class="flex items-center bg-green-50 p-4 rounded-lg">
+                            <span class="text-xl mr-3">✓</span>
+                            <span class="text-lg text-gray-700">軽微な修正対応</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-center">
+                    <div class="bg-gradient-to-r from-green-600 to-green-700 text-white p-10 rounded-lg text-center w-full">
+                        <p class="text-2xl mb-4">月額</p>
+                        <p class="text-6xl font-bold mb-4">¥50,000</p>
+                        <p class="text-xl">（税抜）</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-blue-50 p-6 rounded-lg mt-8">
+                <p class="text-xl text-center text-gray-700">
+                    <strong>初年度総額：</strong> 初期費用 180万円 + 保守 60万円 = <strong class="text-blue-600">240万円</strong>
+                </p>
+            </div>
+
+            <div class="slide-number">9</div>
+        </div>
+
+        <!-- スライド10: お問い合わせ -->
+        <div class="slide flex flex-col justify-center items-center p-16" data-slide="10">
+            <div class="text-center mb-12">
+                <h2 class="text-5xl font-bold text-gray-800 mb-6">ご清聴ありがとうございました</h2>
+                <p class="text-2xl text-gray-600">ご質問・ご不明点がございましたら<br>お気軽にお問い合わせください</p>
+            </div>
+
+            <div class="bg-white border-4 border-gray-200 rounded-2xl p-10 w-full max-w-3xl">
+                <div class="flex flex-col items-center mb-8">
+                    <img src="img/image.png" alt="c-table" class="h-24 mb-6">
+                </div>
+
+                <div class="text-center space-y-4">
+                    <h3 class="text-3xl font-bold text-gray-800 mb-6">お問い合わせ</h3>
+
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <p class="text-lg text-gray-600 mb-2">メールアドレス</p>
+                        <p class="text-2xl font-bold text-blue-600">dev@c-table.co.jp</p>
+                    </div>
+
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <p class="text-lg text-gray-600 mb-2">電話番号</p>
+                        <p class="text-2xl font-bold text-green-600">050-9992-5275</p>
+                    </div>
+                </div>
+
+                <p class="text-center text-xl text-gray-600 mt-8">まずはお気軽にご相談ください</p>
+            </div>
+
+            <div class="slide-number">10</div>
+        </div>
+    </div>
+
+    <!-- ナビゲーションコントロール -->
+    <div class="fixed top-8 right-8 flex space-x-3 no-print z-50">
+        <button id="prevBtn" class="bg-white text-gray-800 px-4 py-2 rounded-lg shadow-lg hover:bg-gray-100 transition font-semibold text-sm">前へ</button>
+        <button id="nextBtn" class="bg-white text-gray-800 px-4 py-2 rounded-lg shadow-lg hover:bg-gray-100 transition font-semibold text-sm">次へ</button>
+        <button id="printBtn" class="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-blue-700 transition font-semibold text-sm">印刷</button>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showSlide(n) {
+            if (n > totalSlides) currentSlide = totalSlides;
+            if (n < 1) currentSlide = 1;
+
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[currentSlide - 1].classList.add('active');
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides) {
+                currentSlide++;
+                showSlide(currentSlide);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 1) {
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+        }
+
+        document.getElementById('nextBtn').addEventListener('click', nextSlide);
+        document.getElementById('prevBtn').addEventListener('click', prevSlide);
+        document.getElementById('printBtn').addEventListener('click', () => window.print());
+
+        // キーボードナビゲーション
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                prevSlide();
+            }
+        });
+
+        // 初期表示
+        showSlide(1);
+    </script>
+</body>
+</html>
