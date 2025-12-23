@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Skill(presentation)",
-      "Skill(presentation:*)"
+      "Skill(presentation:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ]
   }
 }
